@@ -1,0 +1,47 @@
+﻿<Window x:Class="Weather_Samy_Djemai.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Weather_Samy_Djemai"
+        Title="Weather App" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+       
+        
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <TextBox x:Name="VilleInputTextBox" Height="50" Width="100" Margin="5"/>
+            <Button Content="Ajouter Ville" Height="40" Width="120" Click="AjouterVille_Click" Margin="5"/>
+            <Button Content="Supprimer Ville" Width="100" Height="30" Margin="10,80,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="SupprimerVilleButton_Click" />
+        </StackPanel>
+        <ComboBox x:Name="CB_Villes" Height="20" Width="50" SelectionChanged="CB_Villes_SelectionChanged" Margin="10"/>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="10">
+            <StackPanel>
+                <TextBlock Text="METEO" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+
+                <StackPanel Margin="10">
+                    <TextBlock Text="Température Actuelle :" FontWeight="Bold"/>
+                    <TextBox x:Name="TemperatureTextBox" Width="300" Height="30" IsReadOnly="True"/>
+
+                    <TextBlock Text="Condition Actuelle :" FontWeight="Bold" Margin="0,10,0,0"/>
+                    <TextBox x:Name="ConditionTextBox" Width="300" Height="30" IsReadOnly="True"/>
+
+                    <TextBlock Text="Prévisions des 4 prochains jours :" FontWeight="Bold" Margin="20,20,0,10"/>
+                    <TextBox x:Name="Day1TextBox" Width="300" Height="60" TextWrapping="Wrap" IsReadOnly="True" Margin="0,5,0,0"/>
+                    <TextBox x:Name="Day2TextBox" Width="300" Height="60" TextWrapping="Wrap" IsReadOnly="True" Margin="0,5,0,0"/>
+                    <TextBox x:Name="Day3TextBox" Width="300" Height="60" TextWrapping="Wrap" IsReadOnly="True" Margin="0,5,0,0"/>
+                    <TextBox x:Name="Day4TextBox" Width="300" Height="60" TextWrapping="Wrap" IsReadOnly="True" Margin="0,5,0,0"/>
+                </StackPanel>
+
+
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\slab65\source\repos\WEATHERAPP-SAMY\Image\meteo.png" Stretch="UniformToFill"/>
+    </Window.Background>
+</Window>
